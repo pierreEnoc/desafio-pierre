@@ -1,4 +1,4 @@
-package com.pierre;
+package com.pierre.entities;
 
 import java.io.Serializable;
 
