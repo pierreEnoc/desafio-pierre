@@ -1,33 +1,39 @@
 package com.pierre.entities;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 
+//@Document(collation = "user")
+@Document
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
+    @Id
+    private String id;
     private String nome;
-    private String DataNascimento;
+    private String dataNascimento;
     private String cep;
-    private String Document;
+    private String document;
 
     public User() {
 
     }
 
-    public User(Integer id, String nome, String dataNascimento, String cep, String document) {
+    public User(String id, String nome, String dataNascimento, String cep, String document) {
         this.id = id;
         this.nome = nome;
-        DataNascimento = dataNascimento;
+        dataNascimento = dataNascimento;
         this.cep = cep;
-        Document = document;
+        document = document;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -40,11 +46,11 @@ public class User implements Serializable {
     }
 
     public String getDataNascimento() {
-        return DataNascimento;
+        return dataNascimento;
     }
 
     public void setDataNascimento(String dataNascimento) {
-        DataNascimento = dataNascimento;
+        dataNascimento = dataNascimento;
     }
 
     public String getCep() {
@@ -56,11 +62,11 @@ public class User implements Serializable {
     }
 
     public String getDocument() {
-        return Document;
+        return document;
     }
 
     public void setDocument(String document) {
-        Document = document;
+        document = document;
     }
 
     @Override
@@ -76,9 +82,9 @@ public class User implements Serializable {
         return "Usuario{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", DataNascimento='" + DataNascimento + '\'' +
+                ", DataNascimento='" + dataNascimento + '\'' +
                 ", cep='" + cep + '\'' +
-                ", Document='" + Document + '\'' +
+                ", Document='" + document + '\'' +
                 '}';
     }
 }
