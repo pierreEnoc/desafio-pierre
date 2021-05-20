@@ -2,10 +2,10 @@ package com.pierre.entities;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 
-//@Document(collation = "user")
 @Document
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -13,6 +13,8 @@ public class User implements Serializable {
     @Id
     private String id;
     private String nome;
+
+    @DateTimeFormat(pattern = " dd/MM/YYYY")
     private String dataNascimento;
     private String cep;
     private String document;
