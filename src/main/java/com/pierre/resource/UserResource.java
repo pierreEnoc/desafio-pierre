@@ -26,8 +26,7 @@ import java.util.stream.Collectors;
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
-
-
+    //clean arquiteura ou dd builder linker
     @GetMapping
     public ResponseEntity<List<UserDTO>> findAll() {
         List<User> list = userService.findAll();

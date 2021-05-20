@@ -14,18 +14,19 @@ public class User implements Serializable {
     private String id;
     private String nome;
     private String dataNascimento;
-    private String cep;
+
+    private String endereco;
     private String document;
 
     public User() {
 
     }
 
-    public User(String id, String nome, String dataNascimento, String cep, String document) {
+    public User(String id, String nome, String dataNascimento, String endereco, String document) {
         this.id = id;
         this.nome = nome;
         dataNascimento = dataNascimento;
-        this.cep = cep;
+        this.endereco = endereco;
         document = document;
     }
 
@@ -54,11 +55,11 @@ public class User implements Serializable {
     }
 
     public String getCep() {
-        return cep;
+        return endereco;
     }
 
     public void setCep(String cep) {
-        this.cep = cep;
+        this.endereco = cep;
     }
 
     public String getDocument() {
@@ -83,7 +84,7 @@ public class User implements Serializable {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", DataNascimento='" + dataNascimento + '\'' +
-                ", cep='" + cep + '\'' +
+                ", cep='" + endereco + '\'' +
                 ", Document='" + document + '\'' +
                 '}';
     }
