@@ -13,8 +13,6 @@ public class User implements Serializable {
     @Id
     private String id;
     private String nome;
-
-    @DateTimeFormat(pattern = " dd/MM/YYYY")
     private String dataNascimento;
     private String cep;
     private String document;

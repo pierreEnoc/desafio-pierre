@@ -1,16 +1,21 @@
 package com.pierre.dto;
 
 import com.pierre.entities.User;
-import org.springframework.data.annotation.Id;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 public class UserDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String id;
+
+    @NotEmpty(message = "Preenchimento obrigatorio")
+    @Length(min=5, max=120, message="O tamanho deve ser entre 5 e 120 caracteres")
     private String nome;
+    @DateTimeFormat(pattern = " dd/MM/YYYY")
     private String dataNascimento;
     private String cep;
     private String document;
